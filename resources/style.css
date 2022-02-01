@@ -1,0 +1,157 @@
+@font-face {
+ font-family: ABCSansNovaRegular;
+ src: url(../fonts/ABCSansNova-Regular.otf);
+}
+@font-face {
+ font-family: ABCSansNovaBlack;
+ src: url(../fonts/ABCSansNova-Black.otf);
+}
+@font-face {
+ font-family: ABCSansNovaLight;
+ src: url(../fonts/ABCSansNova-Light.otf);
+}
+:root {
+  font-size: 1em;
+  font-family: ABCSansNovaRegular, Helvetica, sans-serif;
+  color: #333;
+  box-sizing: border-box;
+}
+body {
+  margin: 0 0 1rem 0;
+  overflow: hidden;
+}
+h1, p {
+  margin: 0;
+}
+#container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 1rem;
+  display: flex;
+  flex-flow: column;
+}
+#subcontainer {
+  display: flex;
+  flex-flow: column;
+  background: #f2f2f2;
+  border: solid 1pt #999;
+  height: 100%;
+}
+#outcomeDiv {
+  height: 100%;
+  padding: .5rem;
+  display: flex;
+  flex-flow: column;
+  border-bottom: solid 1px #999;
+}
+#outcomeChart {
+  width: 100%;
+  height: 100%;
+}
+#outcomeLegend {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  margin-top: .25rem;
+}
+.legend {
+  color: white;
+  padding: .1rem;
+  font-size: .75rem;
+  width: 80px;
+  text-align: center;
+  margin-right: .25rem;
+  border-radius: .25rem;
+}
+.legend:last-child {
+  margin-right: 0;
+}
+#legendHospitalised {
+  background: #FFB300;
+  color: #333;
+}
+#legendIntensiveCare {
+  background: #f26d00;
+}
+#legendVentilated {
+  background: #e11f30;
+}
+#legendDeaths {
+  background: #333;
+}
+#vaccineDiv {
+  height: 4rem;
+  padding: .5rem;
+  display: flex;
+  flex-flow: column
+}
+#vaccineChart {
+  height: 100%;
+  width: 100%;
+}
+#notes {
+  color: #666;
+  font-size: .7rem;
+  padding: .5rem .5rem 0 .5rem;
+}
+.axis .domain {
+  stroke: none;
+}
+.axis .tick text {
+  fill: #666;
+  font-size: .7rem;
+}
+.axis .tick line {
+  stroke: #ccc;
+  stroke-dasharray: 2 2;
+}
+.hospitalised .bar {
+  fill: #FFB300;
+}
+.intensivecare .bar {
+  fill: #f26d00;
+}
+.ventilated .bar {
+  fill: #e11f30;
+}
+.dead .bar {
+  fill: #333;
+}
+#vaccineBackground {
+  fill: #e6e6e6;
+}
+.vaxBar.boosted {
+  fill: #1c64b8;
+}
+.vaxBar.twodoses {
+  fill: #009de5;
+}
+.vaxBar.onedose {
+  fill: #ccc;
+}
+.chartLabel {
+  font-size: 1rem;
+  font-family: ABCSansNovaBlack, "Arial Black", Helvetica, sans-serif;
+  fill: #333;
+}
+.vaxLabel {
+  font-size: .75rem;
+  fill: white;
+  text-anchor: end;
+}
+.vaxLabel.boosted {
+  text-anchor: start;
+}
+.vaxLabel.onedose {
+  fill: #333;
+}
+@media only screen and (max-width: 500px) {
+  #notes {
+    font-size: .65rem;
+  }
+  .chartLabel {
+    font-size: .9rem;
+  }
+}
